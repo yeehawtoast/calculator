@@ -3,7 +3,7 @@ const storednumbers = [];
 const operatorArray = [];
 displayScreen = document.getElementById('calcScreen');
 displayScreen.value = 0;
-mathNumbers = [];
+var mathNumbers = [];
 
 //operation functions.
 function addButton(op1, op2){
@@ -87,6 +87,21 @@ const minbutton = document.getElementById("minus")
 const divbutton = document.getElementById("divide")
 const multbutton = document.getElementById("multiply")
 
+plusbutton.addEventListener('click', () =>{
+    storeoperator(plus.value)
+})
+
+minbutton.addEventListener('click', () =>{
+    storeoperator(minus.value)
+})
+
+divbutton.addEventListener('click', () =>{
+    storeoperator(divide.value)
+})
+
+multbutton.addEventListener('click', () =>{
+    storeoperator(multiply.value)
+})
 
 //store number function
 function storenumber(btnvalue){
@@ -97,6 +112,11 @@ function storenumber(btnvalue){
     mathNumbers = [newScreen];
 }
 
+//store operator function
+function storeoperator(opvalue){
+    operatorArray.push(opvalue);
+    console.log(operatorArray);
+}
 /*Clear function */
 const clearbtn = document.getElementById("clear")
 clearbtn.addEventListener('click', ()=> {
@@ -112,6 +132,8 @@ function clear() {
     resetArrays();
     displayScreen.value = 0;
 }
+
+
 
 /* To Do:
 2. Make my operators work in the console.
