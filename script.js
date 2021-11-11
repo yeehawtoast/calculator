@@ -114,7 +114,6 @@ function clear() {
 }
 
 /* To Do:
-1.
 2. Make my operators work in the console.
 3. Make the actual operation works
 4. Make the result not only display, but also to replace the first value
